@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 
 const Home: NextPage = () => {
+  let placeholder = '{"location":"Barcelona","minCustomers":2,"maxCustomers":4,"avgCookies":2.5}'
+  
   return (
     <div className="">
       <Head>
@@ -16,22 +18,52 @@ const Home: NextPage = () => {
       </header>
 
       <main className="bg-emerald-50">
-        <form className="flex p-2 my-4 space-x-2 rounded-md bg-emerald-300 ">
-          <p className=''>Location</p>
-          <input name='Location' className=''></input>
-          <button className="bg-emerald-500 ">Create</button>
-          <div>
-            <label>Minimum Customers Per Hour</label>
-            <input></input>
-            
-            <input></input>
 
-            <input></input>
+        <form className="w-4/5 h-64 px-3 mx-auto my-4 rounded-md justify-items-center bg-emerald-300">
+          
+          <h1 className="flex justify-center mt-2 mb-2 text-xl justify-items-center">Create Cookie Stand</h1>
+          
+          <div className="flex m-2">
+            <label className="mr-2">Location</label>
+            <input name='Location' className="flex-grow"></input>
           </div>
+
+
+          <div className="flex space-x-2 justify-items-center">
+
+            <div className='grid'>
+              <label>Minimum Customers Per Hour</label>
+              <input></input>
+            </div>
+
+            <div className='grid'>
+              <label>Maximum Customers Per Hour</label>
+              <input></input>
+            </div>
+
+            <div className='grid'>
+              <label>Average Cookies per Sale</label>
+              <input></input>
+            </div>
+            
+            <div className='grid'>
+              <button className="bg-emerald-500 ">Create</button>
+            </div>
+            
+          </div>
+
+          <div className="flex justify-center m-5">
+            <p>Report Table Coming Soon...</p>
+          </div>
+
+          <div className="flex justify-center">
+            <p>{placeholder}</p>
+          </div>
+
         </form>
       </main>
 
-      <footer className='p-2 pl-5 mt-3 bg-emerald-500 text-slate-700'>
+      <footer className='p-2 pl-5 m-auto bg-emerald-500 text-slate-700'>
         <p>©2022</p>
       </footer>
     </div>
